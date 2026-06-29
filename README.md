@@ -264,4 +264,4 @@ Current package version:
 
 ## License
 
-Add a `LICENSE` file before broad public distribution.
+MIT.
