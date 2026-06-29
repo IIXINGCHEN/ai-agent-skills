@@ -1,0 +1,51 @@
+interface:
+  display_name: "Production AI Agent Skills"
+  short_description: "Full lifecycle coding-agent skills with unique routing and evidence gates"
+  default_prompt: "Use lifecycle-orchestrator for init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "claude"
+    - "codex"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+lifecycle:
+  canonical: "init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete"
+  phases:
+    - init
+    - PRD
+    - plan
+    - execute
+    - code_review
+    - review_fix_loop
+    - second_review
+    - multi_angle_review
+    - commit_readiness
+    - push
+    - complete
+  orchestrator: lifecycle-orchestrator
+  phase_skills:
+    init: project-init
+    PRD: prd-authoring
+    plan: implementation-planning
+    execute: plan-execution
+    code_review: code-review-primary
+    review_fix_loop: review-fix-loop
+    second_review: code-review-secondary
+    multi_angle_review: multi-angle-review
+    commit_readiness: git-commit-readiness
+    push: git-push-readiness
+    complete: completion-gate
+routing:
+  table: references/skill-routing-table.md
+evidence:
+  ledger: references/lifecycle-evidence-ledger.md

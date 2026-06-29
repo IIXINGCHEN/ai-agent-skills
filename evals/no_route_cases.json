@@ -1,0 +1,18 @@
+[
+  {
+    "input": "帮我把这句话润色得更自然",
+    "expected": "no_route"
+  },
+  {
+    "input": "写一首诗",
+    "expected": "no_route"
+  },
+  {
+    "input": "只改按钮颜色",
+    "expected": "no_route_or_focused_task_only"
+  },
+  {
+    "input": "生成一份项目介绍文档",
+    "expected": "no_route"
+  }
+]

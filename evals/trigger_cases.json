@@ -1,0 +1,123 @@
+[
+  {
+    "input": "对项目做生产级多维度审查并修复模拟数据",
+    "expected_skills": [
+      "production-audit-repair"
+    ]
+  },
+  {
+    "input": "Perform a production-grade multidimensional audit and repair of this project",
+    "expected_skills": [
+      "production-audit-repair"
+    ]
+  },
+  {
+    "input": "只检查代码问题，不要修改",
+    "expected_skills": [
+      "repo-discovery",
+      "code-search-funnel",
+      "spatial-review"
+    ]
+  },
+  {
+    "input": "修复登录接口 500 错误",
+    "expected_skills": [
+      "repo-discovery",
+      "code-search-funnel",
+      "test-first-repair",
+      "verification-gate"
+    ]
+  },
+  {
+    "input": "把假的监控指标换成真实系统指标，没有真实来源就停止",
+    "expected_skills": [
+      "data-integrity-hardening",
+      "vertical-call-chain-review",
+      "verification-gate"
+    ]
+  },
+  {
+    "input": "先制定实施计划，再按计划执行并验证",
+    "expected_skills": [
+      "implementation-planning",
+      "plan-execution",
+      "verification-gate",
+      "execution-reporting"
+    ]
+  },
+  {
+    "input": "使用 strict profile 做代码审查，不要泛泛而谈",
+    "expected_skills": [
+      "repo-discovery",
+      "code-search-funnel",
+      "spatial-review",
+      "vertical-call-chain-review",
+      "security-review"
+    ]
+  },
+  {
+    "input": "Do we support init, PRD, plan, and execute? Complete the lifecycle support.",
+    "expected_skills": [
+      "lifecycle-orchestrator",
+      "project-init",
+      "prd-authoring",
+      "implementation-planning",
+      "plan-execution"
+    ]
+  },
+  {
+    "input": "初始化这个项目，告诉我怎么安装依赖和启动",
+    "expected_skills": [
+      "project-init",
+      "repo-discovery"
+    ]
+  },
+  {
+    "input": "帮我为这个功能写 PRD",
+    "expected_skills": [
+      "prd-authoring"
+    ]
+  },
+  {
+    "input": "从 PRD 生成实施计划并执行",
+    "expected_skills": [
+      "implementation-planning",
+      "plan-execution",
+      "verification-gate",
+      "execution-reporting"
+    ]
+  },
+  {
+    "input": "init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete",
+    "expected_skills": [
+      "lifecycle-orchestrator",
+      "code-review-primary",
+      "code-review-secondary",
+      "multi-angle-review",
+      "git-push-readiness",
+      "completion-gate"
+    ]
+  },
+  {
+    "input": "After execute, run code review, fix confirmed issues, then run second review",
+    "expected_skills": [
+      "code-review-primary",
+      "review-fix-loop",
+      "code-review-secondary"
+    ]
+  },
+  {
+    "input": "Run multi-angle review including spatial, vertical, reverse, security, and data integrity lenses",
+    "expected_skills": [
+      "multi-angle-review"
+    ]
+  },
+  {
+    "input": "After reviews pass, push to the remote branch",
+    "expected_skills": [
+      "git-commit-readiness",
+      "git-push-readiness",
+      "completion-gate"
+    ]
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "case": "confirmed_issue",
+    "must_include": [
+      "File",
+      "Evidence",
+      "Root cause",
+      "Minimal fix",
+      "Verification"
+    ]
+  },
+  {
+    "case": "implementation_result",
+    "must_include": [
+      "Conclusion",
+      "Facts / Root Cause",
+      "Changes Made",
+      "Verification",
+      "Risks / Pending Items"
+    ]
+  },
+  {
+    "case": "blocked",
+    "must_include": [
+      "What Was Attempted",
+      "Evidence Observed",
+      "Blocking Reason",
+      "Minimal Next Step"
+    ]
+  },
+  {
+    "case": "plan_result",
+    "must_include": [
+      "Goal",
+      "Current State",
+      "Selected Solution",
+      "Verification Checklist",
+      "Rollback Considerations"
+    ]
+  },
+  {
+    "case": "execution_report",
+    "must_include": [
+      "Completed Tasks",
+      "Validation Results",
+      "Divergences From Plan",
+      "Skipped Items"
+    ]
+  },
+  {
+    "case": "project_init_result",
+    "must_include": [
+      "Detected Project",
+      "Prerequisites",
+      "Installation",
+      "Start Commands",
+      "Validation",
+      "Blockers / Missing Inputs"
+    ]
+  },
+  {
+    "case": "prd_result",
+    "must_include": [
+      "PRD",
+      "Assumptions",
+      "Open Questions",
+      "Recommended Next Step"
+    ]
+  },
+  {
+    "case": "lifecycle_result",
+    "must_include": [
+      "Lifecycle Phases Used",
+      "Key Evidence",
+      "Outputs Created",
+      "Verification",
+      "Risks / Pending Items"
+    ]
+  },
+  {
+    "case": "code_review_result",
+    "must_include": [
+      "Scope",
+      "Confirmed Issues",
+      "Evidence",
+      "Review Status"
+    ]
+  },
+  {
+    "case": "secondary_review_result",
+    "must_include": [
+      "First Review Findings Verified",
+      "Regression Checks",
+      "Pre-Push Decision"
+    ]
+  },
+  {
+    "case": "multi_angle_review_result",
+    "must_include": [
+      "Lens Results",
+      "Blockers",
+      "Push Readiness"
+    ]
+  },
+  {
+    "case": "push_result",
+    "must_include": [
+      "Push Status",
+      "Remote / Branch",
+      "Commands Executed",
+      "Result"
+    ]
+  },
+  {
+    "case": "completion_result",
+    "must_include": [
+      "Lifecycle Status",
+      "Verification Evidence",
+      "Review Evidence",
+      "Final State"
+    ]
+  }
+]

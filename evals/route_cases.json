@@ -1,0 +1,42 @@
+[
+  {
+    "input": "Set up this repository and tell me how to run it locally",
+    "expected_route": "project-init"
+  },
+  {
+    "input": "Write a PRD for the billing dashboard feature",
+    "expected_route": "prd-authoring"
+  },
+  {
+    "input": "Create an implementation plan from this PRD",
+    "expected_route": "implementation-planning"
+  },
+  {
+    "input": "Execute the approved plan",
+    "expected_route": "plan-execution"
+  },
+  {
+    "input": "Review the changed files before push",
+    "expected_route": "code-review-primary"
+  },
+  {
+    "input": "Run a second review after fixes",
+    "expected_route": "code-review-secondary"
+  },
+  {
+    "input": "Run multi-angle review with security and data integrity lenses",
+    "expected_route": "multi-angle-review"
+  },
+  {
+    "input": "Push this branch after all reviews pass",
+    "expected_route": "git-push-readiness"
+  },
+  {
+    "input": "Summarize final lifecycle status",
+    "expected_route": "completion-gate"
+  },
+  {
+    "input": "Write a poem about shipping software",
+    "expected_route": "no_route"
+  }
+]

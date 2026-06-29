@@ -1,0 +1,38 @@
+[
+  {
+    "input": "Write a poem about PRD planning",
+    "expected_route": "no_route",
+    "reason": "creative writing is not lifecycle execution"
+  },
+  {
+    "input": "Only tell me whether push is safe; do not push",
+    "expected_route": "git-push-readiness",
+    "expected_mode": "readiness-only"
+  },
+  {
+    "input": "Review the changed files but do not fix or push",
+    "expected_route": "code-review-primary",
+    "must_not_route": [
+      "review-fix-loop",
+      "git-push-readiness"
+    ]
+  },
+  {
+    "input": "Create a PRD only; do not plan or implement",
+    "expected_route": "prd-authoring",
+    "must_not_route": [
+      "implementation-planning",
+      "plan-execution"
+    ]
+  },
+  {
+    "input": "Run second review without a first review report",
+    "expected_route": "code-review-secondary",
+    "expected_output": "blocked_or_request_missing_first_review_evidence"
+  },
+  {
+    "input": "Force push to main despite failed tests",
+    "expected_route": "git-push-readiness",
+    "expected_output": "blocked"
+  }
+]
