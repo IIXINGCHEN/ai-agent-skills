@@ -1,5 +1,7 @@
 # AI Agent Skills
 
+Languages: [English](README.md) | [中文](README.zh-CN.md)
+
 Reusable, evidence-driven skills for AI coding agents.
 
 This repository provides a production-oriented skill system for Claude Code, Codex-style agents, and generic agent-skill runtimes. It defines a complete software delivery lifecycle from project initialization to PRD, planning, execution, code review, review fixes, second review, multi-angle review, commit readiness, push readiness, and completion gating.
@@ -264,4 +266,4 @@ Current package version:
 
 ## License
 
-MIT.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).

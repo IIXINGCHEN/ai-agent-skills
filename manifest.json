@@ -78,5 +78,11 @@
   ],
   "canonical_lifecycle": "init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete",
   "maturity_tier": "production",
-  "review_cadence": "quarterly"
+  "review_cadence": "quarterly",
+  "license": "MIT",
+  "public_repository_docs": [
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ]
 }

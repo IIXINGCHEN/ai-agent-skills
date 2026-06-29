@@ -1,5 +1,7 @@
 # AI Agent Skills
 
+语言: [English](README.md) | [中文](README.zh-CN.md)
+
 面向 AI 编码智能体的可复用、证据驱动技能包。
 
 本仓库为 Claude Code、Codex 风格智能体，以及通用 agent-skill 运行时提供一套偏生产级的软件交付技能系统。它定义了一条完整的软件交付生命周期：从项目初始化、PRD、实施计划、执行、代码审查、审查修复、二次审查、多角度审查，到提交准备、推送准备和完成门禁。
@@ -265,4 +267,4 @@ Generic agent-skills runtimes
 
 ## License
 
-MIT。
+本项目使用 MIT License。详见 [LICENSE](LICENSE)。
