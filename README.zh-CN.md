@@ -265,4 +265,4 @@ Generic agent-skills runtimes
 
 ## License
 
-公开分发前请添加 `LICENSE` 文件。
+MIT。
