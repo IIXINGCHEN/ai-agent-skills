@@ -1,0 +1,16 @@
+{
+  "name": "multi-angle-review",
+  "description": "Executable contract metadata for multi-angle-review.",
+  "preconditions": [
+    "Repository root is accessible",
+    "Skill markdown exists and has valid frontmatter"
+  ],
+  "postconditions": [
+    "Skill output follows references/output-templates.md when applicable",
+    "Confirmed issues follow schemas/confirmed-issue.schema.json"
+  ],
+  "verification": [
+    "agent-skills/multi-angle-review/verify.sh",
+    "python3 scripts/validate-package.py"
+  ]
+}

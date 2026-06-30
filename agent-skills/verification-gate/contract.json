@@ -1,0 +1,16 @@
+{
+  "name": "verification-gate",
+  "description": "Executable contract metadata for verification-gate.",
+  "preconditions": [
+    "Repository root is accessible",
+    "Skill markdown exists and has valid frontmatter"
+  ],
+  "postconditions": [
+    "Skill output follows references/output-templates.md when applicable",
+    "Confirmed issues follow schemas/confirmed-issue.schema.json"
+  ],
+  "verification": [
+    "agent-skills/verification-gate/verify.sh",
+    "python3 scripts/validate-package.py"
+  ]
+}

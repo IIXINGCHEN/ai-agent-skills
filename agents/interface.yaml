@@ -45,6 +45,19 @@ lifecycle:
     commit_readiness: git-commit-readiness
     push: git-push-readiness
     complete: completion-gate
+  cross_cutting_gates:
+    verification:
+      skill: verification-gate
+      required_before:
+        - code_review
+        - completion
+      purpose: "Prevent unverified completion claims with the smallest reliable checks."
+    reporting:
+      skill: execution-reporting
+      required_after:
+        - execution
+        - blocked_state
+      purpose: "Report evidence, divergences, skipped items, risks, and blockers."
 routing:
   table: references/skill-routing-table.md
 evidence:

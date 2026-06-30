@@ -158,6 +158,16 @@ Task:
 Review the implemented changes and report confirmed issues only.
 ```
 
+## 可执行契约层
+
+本包以指令为核心，但关键承诺由可执行验证器约束：
+
+- `scripts/validate-package.py` 验证包元数据、技能契约、schema、生命周期一致性、eval schema 和输出字段。
+- `scripts/route-validate.py` 提供确定性路由检查，并可回放对抗式路由 eval。
+- `scripts/lifecycle-state-machine.py` 验证结构化生命周期台账，阻止非法完成声明。
+- `scripts/output-guard.py` 扫描生成报告中的缺失证据字段、不可验证路径引用和未验证完成声明。
+- 每个 `agent-skills/*` 目录都包含 `verify.sh` 和 `contract.json`，使 skill 资产可被机械发现和测试。
+
 ## 安全模型
 
 始终生效的规则：
@@ -262,7 +272,7 @@ Generic agent-skills runtimes
 当前包版本：
 
 ```text
-1.2.0
+1.2.2
 ```
 
 ## License

@@ -1,6 +1,6 @@
 ---
 name: security-review
-description: Audit security-sensitive behavior in task scope: auth, validation, secrets, injection, paths, SSRF, deserialization, and dependencies.
+description: "Audit security-sensitive behavior in task scope: auth, validation, secrets, injection, paths, SSRF, deserialization, and dependencies."
 metadata:
   maturity: production
   owner: local

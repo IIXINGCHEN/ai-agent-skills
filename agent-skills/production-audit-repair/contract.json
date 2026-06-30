@@ -1,0 +1,16 @@
+{
+  "name": "production-audit-repair",
+  "description": "Executable contract metadata for production-audit-repair.",
+  "preconditions": [
+    "Repository root is accessible",
+    "Skill markdown exists and has valid frontmatter"
+  ],
+  "postconditions": [
+    "Skill output follows references/output-templates.md when applicable",
+    "Confirmed issues follow schemas/confirmed-issue.schema.json"
+  ],
+  "verification": [
+    "agent-skills/production-audit-repair/verify.sh",
+    "python3 scripts/validate-package.py"
+  ]
+}

@@ -1,12 +1,18 @@
 # Lifecycle Workflow
 
-The complete delivery lifecycle is:
+The canonical lifecycle lives in `references/review-push-lifecycle.md`:
+
+```text
+init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete
+```
+
+This file documents the minimal delivery subset:
 
 ```text
 init → PRD → plan → execute → verify → report
 ```
 
-Use the smallest useful subset. The lifecycle is a routing aid, not a mandate to create unnecessary files.
+Use the smallest useful subset. The minimal subset is a routing aid, not a replacement for the canonical lifecycle and not a mandate to create unnecessary files.
 
 ## Phase Map
 
@@ -21,7 +27,7 @@ Use the smallest useful subset. The lifecycle is a routing aid, not a mandate to
 
 ## Recommended Invocations
 
-### Full Lifecycle
+### Minimal Lifecycle Subset
 
 ```md
 Use skill:

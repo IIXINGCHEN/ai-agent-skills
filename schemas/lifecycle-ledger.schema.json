@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/lifecycle-ledger.schema.json",
+  "title": "Lifecycle Evidence Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "canonical_lifecycle",
+    "phases"
+  ],
+  "properties": {
+    "canonical_lifecycle": {
+      "const": "init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete"
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "phase",
+          "skill",
+          "status",
+          "evidence",
+          "blockers",
+          "accepted_risks"
+        ],
+        "properties": {
+          "phase": {
+            "type": "string"
+          },
+          "skill": {
+            "type": "string",
+            "enum": [
+              "code-review-primary",
+              "code-review-secondary",
+              "code-search-funnel",
+              "completion-gate",
+              "data-integrity-hardening",
+              "destructive-safety-gate",
+              "error-handling-hardening",
+              "execution-reporting",
+              "git-commit-readiness",
+              "git-push-readiness",
+              "implementation-planning",
+              "lifecycle-orchestrator",
+              "multi-angle-review",
+              "plan-execution",
+              "prd-authoring",
+              "production-audit-repair",
+              "project-init",
+              "repo-discovery",
+              "reverse-trace-review",
+              "review-fix-loop",
+              "security-review",
+              "spatial-review",
+              "test-first-repair",
+              "verification-gate",
+              "vertical-call-chain-review"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "pass",
+              "blocked",
+              "skipped"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "blockers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "accepted_risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

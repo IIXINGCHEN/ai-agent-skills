@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/route-decision.schema.json",
+  "title": "Deterministic Route Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "input",
+    "route",
+    "confidence",
+    "matched_rules",
+    "blocked_reasons"
+  ],
+  "properties": {
+    "input": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string",
+      "enum": [
+        "code-review-primary",
+        "code-review-secondary",
+        "code-search-funnel",
+        "completion-gate",
+        "data-integrity-hardening",
+        "destructive-safety-gate",
+        "error-handling-hardening",
+        "execution-reporting",
+        "git-commit-readiness",
+        "git-push-readiness",
+        "implementation-planning",
+        "lifecycle-orchestrator",
+        "multi-angle-review",
+        "plan-execution",
+        "prd-authoring",
+        "production-audit-repair",
+        "project-init",
+        "repo-discovery",
+        "reverse-trace-review",
+        "review-fix-loop",
+        "security-review",
+        "spatial-review",
+        "test-first-repair",
+        "verification-gate",
+        "vertical-call-chain-review",
+        "no_route",
+        "blocked"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "matched_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

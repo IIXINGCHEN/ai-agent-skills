@@ -43,12 +43,14 @@ Rules: be concise, do not claim unverified success, include actual commands and 
 ### Issue: [short title]
 
 - Severity:
+- Category:
 - File:
 - Symbol / route / config:
 - Evidence:
 - Root cause:
-- Recommended fix:
+- Minimal fix:
 - Verification:
+- Risk:
 
 ## Risks
 
@@ -201,11 +203,14 @@ Rules: do not claim completion, do not fabricate unavailable data, and do not co
 
 ### Issue: [title]
 - Severity:
+- Category:
 - File:
+- Symbol / route / config:
 - Evidence:
 - Root cause:
-- Suggested fix:
+- Minimal fix:
 - Verification:
+- Risk:
 
 ## Risks / Follow-ups
 

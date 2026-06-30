@@ -103,7 +103,9 @@ Reference:
 references/strict-review-profile.md
 ```
 
-## Full Lifecycle: Init → PRD → Plan → Exec
+## Minimal Lifecycle Subset: Init → PRD → Plan → Execute → Verify → Report
+
+Use this when review, commit, push, and completion gates are not part of the requested workflow. The canonical full lifecycle is documented in `references/review-push-lifecycle.md`.
 
 ```md
 Use skill:

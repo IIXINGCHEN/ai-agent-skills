@@ -1,6 +1,6 @@
 ---
 name: lifecycle-orchestrator
-description: Orchestrate the canonical lifecycle: init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete.
+description: "Orchestrate the canonical lifecycle: init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete."
 metadata:
   maturity: production
   owner: local

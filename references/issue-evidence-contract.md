@@ -10,7 +10,7 @@ Every confirmed issue must be evidence-backed.
 - Severity: [critical/high/medium/low]
 - Category: [spatial/vertical/reverse/data/error/security/test/config]
 - File: [path]
-- Symbol / route / config key: [name]
+- Symbol / route / config: [name]
 - Evidence: [actual code, command output, log, response, or test failure]
 - Root cause: [why this happens]
 - Minimal fix: [smallest safe correction]

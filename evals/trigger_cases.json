@@ -119,5 +119,23 @@
       "git-push-readiness",
       "completion-gate"
     ]
+  },
+  {
+    "input": "执行破坏性操作前先进行 destructive safety gate，两次 DELETE 确认和回滚检查",
+    "expected_skills": [
+      "destructive-safety-gate"
+    ]
+  },
+  {
+    "input": "审查 API、文件和网络失败时的错误处理硬化",
+    "expected_skills": [
+      "error-handling-hardening"
+    ]
+  },
+  {
+    "input": "从失败日志和错误响应反向追踪根因",
+    "expected_skills": [
+      "reverse-trace-review"
+    ]
   }
 ]

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/confirmed-issue.schema.json",
+  "title": "Confirmed Issue Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "severity",
+    "category",
+    "file",
+    "symbol_or_route_or_config",
+    "evidence",
+    "root_cause",
+    "minimal_fix",
+    "verification",
+    "risk"
+  ],
+  "properties": {
+    "severity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "spatial",
+        "vertical",
+        "reverse",
+        "data",
+        "error",
+        "security",
+        "test",
+        "config"
+      ]
+    },
+    "file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol_or_route_or_config": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "root_cause": {
+      "type": "string",
+      "minLength": 1
+    },
+    "minimal_fix": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

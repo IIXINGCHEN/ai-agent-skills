@@ -157,6 +157,16 @@ Task:
 Review the implemented changes and report confirmed issues only.
 ```
 
+## Executable Contract Layer
+
+This package is instruction-first, but critical claims are guarded by executable validators:
+
+- `scripts/validate-package.py` validates package metadata, skill contracts, schemas, lifecycle consistency, eval schemas, and output fields.
+- `scripts/route-validate.py` provides deterministic route checks and eval replay for adversarial routing cases.
+- `scripts/lifecycle-state-machine.py` validates structured lifecycle ledgers and blocks illegal completion claims.
+- `scripts/output-guard.py` scans generated reports for missing evidence fields, unverifiable path references, and unverified completion claims.
+- Every `agent-skills/*` directory contains `verify.sh` and `contract.json` so the skill asset is mechanically discoverable and testable.
+
 ## Safety Model
 
 Always-active rules:
@@ -261,7 +271,7 @@ Generic agent-skills runtimes
 Current package version:
 
 ```text
-1.2.0
+1.2.2
 ```
 
 ## License

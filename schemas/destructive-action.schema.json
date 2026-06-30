@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/destructive-action.schema.json",
+  "title": "Destructive Action Approval Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "operation",
+    "targets",
+    "impact",
+    "backup_or_rollback",
+    "first_confirmation",
+    "second_confirmation"
+  ],
+  "properties": {
+    "operation": {
+      "type": "string"
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "impact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "backup_or_rollback": {
+      "type": "string",
+      "minLength": 1
+    },
+    "first_confirmation": {
+      "const": "DELETE"
+    },
+    "second_confirmation": {
+      "const": "DELETE"
+    }
+  }
+}

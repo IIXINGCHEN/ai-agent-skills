@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/skill.schema.json",
+  "title": "Skill Contract Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "description",
+    "preconditions",
+    "postconditions",
+    "verification"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "enum": [
+        "code-review-primary",
+        "code-review-secondary",
+        "code-search-funnel",
+        "completion-gate",
+        "data-integrity-hardening",
+        "destructive-safety-gate",
+        "error-handling-hardening",
+        "execution-reporting",
+        "git-commit-readiness",
+        "git-push-readiness",
+        "implementation-planning",
+        "lifecycle-orchestrator",
+        "multi-angle-review",
+        "plan-execution",
+        "prd-authoring",
+        "production-audit-repair",
+        "project-init",
+        "repo-discovery",
+        "reverse-trace-review",
+        "review-fix-loop",
+        "security-review",
+        "spatial-review",
+        "test-first-repair",
+        "verification-gate",
+        "vertical-call-chain-review"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "postconditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

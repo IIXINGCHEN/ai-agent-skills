@@ -1,7 +1,7 @@
 {
   "name": "production-ai-agent-skills",
-  "version": "1.2.0",
-  "description": "Reusable AI coding-agent skills with unique routing, governed metadata, evidence ledger, adversarial evals, and canonical lifecycle support.",
+  "version": "1.2.2",
+  "description": "Reusable AI coding-agent skills with behavior-level contract validation, deterministic route checks, lifecycle state validation, output guards, adversarial tests, and canonical lifecycle support.",
   "entrypoints": [
     "CLAUDE.md",
     "AGENTS.md"
@@ -34,16 +34,17 @@
     "vertical-call-chain-review"
   ],
   "references": [
-    "references/skill-routing-table.md",
-    "references/lifecycle-evidence-ledger.md",
-    "references/invocation-templates.md",
-    "references/output-templates.md",
-    "references/issue-evidence-contract.md",
     "references/commands-fusion-map.md",
-    "references/strict-review-profile.md",
+    "references/invocation-templates.md",
+    "references/issue-evidence-contract.md",
+    "references/lifecycle-evidence-ledger.md",
+    "references/lifecycle-evidence-ledger.template.json",
     "references/lifecycle-workflow.md",
+    "references/output-templates.md",
+    "references/prd-template.md",
     "references/review-push-lifecycle.md",
-    "references/prd-template.md"
+    "references/skill-routing-table.md",
+    "references/strict-review-profile.md"
   ],
   "evals": [
     "evals/trigger_cases.json",
@@ -61,7 +62,8 @@
   "safety": {
     "anti_fabrication": true,
     "real_data_required": true,
-    "destructive_confirmation": "two DELETE confirmations"
+    "destructive_confirmation": "two DELETE confirmations",
+    "destructive_action_schema": "schemas/destructive-action.schema.json"
   },
   "lifecycle": [
     "init",
@@ -84,5 +86,330 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE"
-  ]
+  ],
+  "schemas": [
+    "schemas/confirmed-issue.schema.json",
+    "schemas/destructive-action.schema.json",
+    "schemas/lifecycle-ledger.schema.json",
+    "schemas/route-decision.schema.json",
+    "schemas/skill.schema.json"
+  ],
+  "tools": [
+    "scripts/validate-package.py",
+    "scripts/route-validate.py",
+    "scripts/lifecycle-state-machine.py",
+    "scripts/output-guard.py",
+    "scripts/verify-skill.py"
+  ],
+  "tests": [
+    "tests/contract_tests.py"
+  ],
+  "skill_contracts": {
+    "code-review-primary": {
+      "contract": "agent-skills/code-review-primary/contract.json",
+      "verify": "agent-skills/code-review-primary/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "code-review-secondary": {
+      "contract": "agent-skills/code-review-secondary/contract.json",
+      "verify": "agent-skills/code-review-secondary/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "code-search-funnel": {
+      "contract": "agent-skills/code-search-funnel/contract.json",
+      "verify": "agent-skills/code-search-funnel/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "completion-gate": {
+      "contract": "agent-skills/completion-gate/contract.json",
+      "verify": "agent-skills/completion-gate/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "data-integrity-hardening": {
+      "contract": "agent-skills/data-integrity-hardening/contract.json",
+      "verify": "agent-skills/data-integrity-hardening/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "destructive-safety-gate": {
+      "contract": "agent-skills/destructive-safety-gate/contract.json",
+      "verify": "agent-skills/destructive-safety-gate/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "error-handling-hardening": {
+      "contract": "agent-skills/error-handling-hardening/contract.json",
+      "verify": "agent-skills/error-handling-hardening/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "execution-reporting": {
+      "contract": "agent-skills/execution-reporting/contract.json",
+      "verify": "agent-skills/execution-reporting/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "git-commit-readiness": {
+      "contract": "agent-skills/git-commit-readiness/contract.json",
+      "verify": "agent-skills/git-commit-readiness/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "git-push-readiness": {
+      "contract": "agent-skills/git-push-readiness/contract.json",
+      "verify": "agent-skills/git-push-readiness/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "implementation-planning": {
+      "contract": "agent-skills/implementation-planning/contract.json",
+      "verify": "agent-skills/implementation-planning/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "lifecycle-orchestrator": {
+      "contract": "agent-skills/lifecycle-orchestrator/contract.json",
+      "verify": "agent-skills/lifecycle-orchestrator/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "multi-angle-review": {
+      "contract": "agent-skills/multi-angle-review/contract.json",
+      "verify": "agent-skills/multi-angle-review/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "plan-execution": {
+      "contract": "agent-skills/plan-execution/contract.json",
+      "verify": "agent-skills/plan-execution/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "prd-authoring": {
+      "contract": "agent-skills/prd-authoring/contract.json",
+      "verify": "agent-skills/prd-authoring/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "production-audit-repair": {
+      "contract": "agent-skills/production-audit-repair/contract.json",
+      "verify": "agent-skills/production-audit-repair/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "project-init": {
+      "contract": "agent-skills/project-init/contract.json",
+      "verify": "agent-skills/project-init/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "repo-discovery": {
+      "contract": "agent-skills/repo-discovery/contract.json",
+      "verify": "agent-skills/repo-discovery/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "reverse-trace-review": {
+      "contract": "agent-skills/reverse-trace-review/contract.json",
+      "verify": "agent-skills/reverse-trace-review/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "review-fix-loop": {
+      "contract": "agent-skills/review-fix-loop/contract.json",
+      "verify": "agent-skills/review-fix-loop/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "security-review": {
+      "contract": "agent-skills/security-review/contract.json",
+      "verify": "agent-skills/security-review/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "spatial-review": {
+      "contract": "agent-skills/spatial-review/contract.json",
+      "verify": "agent-skills/spatial-review/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "test-first-repair": {
+      "contract": "agent-skills/test-first-repair/contract.json",
+      "verify": "agent-skills/test-first-repair/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "verification-gate": {
+      "contract": "agent-skills/verification-gate/contract.json",
+      "verify": "agent-skills/verification-gate/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    },
+    "vertical-call-chain-review": {
+      "contract": "agent-skills/vertical-call-chain-review/contract.json",
+      "verify": "agent-skills/vertical-call-chain-review/verify.sh",
+      "preconditions": [
+        "valid_frontmatter",
+        "skill_sections_present"
+      ],
+      "postconditions": [
+        "output_contract_when_applicable",
+        "evidence_contract_when_reporting_issues"
+      ]
+    }
+  },
+  "runtime_guards": {
+    "deterministic_route_validation": "scripts/route-validate.py",
+    "lifecycle_state_machine": "scripts/lifecycle-state-machine.py",
+    "output_fabrication_guard": "scripts/output-guard.py",
+    "package_contract_validation": "scripts/validate-package.py"
+  }
 }

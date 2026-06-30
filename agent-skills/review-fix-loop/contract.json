@@ -1,0 +1,16 @@
+{
+  "name": "review-fix-loop",
+  "description": "Executable contract metadata for review-fix-loop.",
+  "preconditions": [
+    "Repository root is accessible",
+    "Skill markdown exists and has valid frontmatter"
+  ],
+  "postconditions": [
+    "Skill output follows references/output-templates.md when applicable",
+    "Confirmed issues follow schemas/confirmed-issue.schema.json"
+  ],
+  "verification": [
+    "agent-skills/review-fix-loop/verify.sh",
+    "python3 scripts/validate-package.py"
+  ]
+}

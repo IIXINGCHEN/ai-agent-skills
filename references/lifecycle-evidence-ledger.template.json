@@ -1,0 +1,93 @@
+{
+  "canonical_lifecycle": "init → PRD → plan → execute → code review → review fix loop → second review → multi-angle review → commit readiness → push → complete",
+  "phases": [
+    {
+      "phase": "init",
+      "skill": "project-init",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "PRD",
+      "skill": "prd-authoring",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "plan",
+      "skill": "implementation-planning",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "execute",
+      "skill": "plan-execution",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "code review",
+      "skill": "code-review-primary",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "review fix loop",
+      "skill": "review-fix-loop",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "second review",
+      "skill": "code-review-secondary",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "multi-angle review",
+      "skill": "multi-angle-review",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "commit readiness",
+      "skill": "git-commit-readiness",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "push",
+      "skill": "git-push-readiness",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    },
+    {
+      "phase": "complete",
+      "skill": "completion-gate",
+      "status": "pending",
+      "evidence": [],
+      "blockers": [],
+      "accepted_risks": []
+    }
+  ]
+}

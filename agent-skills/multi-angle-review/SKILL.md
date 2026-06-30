@@ -1,6 +1,6 @@
 ---
 name: multi-angle-review
-description: Review code from multiple lenses: spatial, vertical, reverse, security, data integrity, error handling, tests, and push readiness.
+description: "Review code from multiple lenses: spatial, vertical, reverse, security, data integrity, error handling, tests, and push readiness."
 metadata:
   maturity: production
   owner: local

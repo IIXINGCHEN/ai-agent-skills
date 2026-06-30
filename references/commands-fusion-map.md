@@ -33,7 +33,7 @@ This file maps useful ideas from the uploaded Claude Commands package into the S
 |---|---|---|
 | `project/init.md` | `project-init` | Setup, dependencies, environment, start commands, common commands, validation. |
 | `docs/create-prd.md` | `prd-authoring` | PRD structure, MVP scope, user stories, success criteria, risks, phases. |
-| lifecycle synthesis | `lifecycle-orchestrator` | init → PRD → plan → execute → verify → report routing. |
+| lifecycle synthesis | `lifecycle-orchestrator` | Minimal subset routing: init → PRD → plan → execute → verify → report. Canonical lifecycle remains in `references/review-push-lifecycle.md`. |
 
 ## Review + Push Additions
 

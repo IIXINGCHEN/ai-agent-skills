@@ -2,6 +2,12 @@
 
 Use this ledger before `completion-gate`. Every required phase must have a status and evidence.
 
+For machine validation, use:
+
+- Schema: `schemas/lifecycle-ledger.schema.json`
+- Template: `references/lifecycle-evidence-ledger.template.json`
+- State machine: `python3 scripts/lifecycle-state-machine.py <ledger.json>`
+
 Canonical lifecycle:
 
 ```text

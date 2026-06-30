@@ -1,0 +1,16 @@
+{
+  "name": "error-handling-hardening",
+  "description": "Executable contract metadata for error-handling-hardening.",
+  "preconditions": [
+    "Repository root is accessible",
+    "Skill markdown exists and has valid frontmatter"
+  ],
+  "postconditions": [
+    "Skill output follows references/output-templates.md when applicable",
+    "Confirmed issues follow schemas/confirmed-issue.schema.json"
+  ],
+  "verification": [
+    "agent-skills/error-handling-hardening/verify.sh",
+    "python3 scripts/validate-package.py"
+  ]
+}
